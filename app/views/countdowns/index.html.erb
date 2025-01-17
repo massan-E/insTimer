@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Countdowns" %>
+
+<h1>Countdowns</h1>
+
+<div id="countdowns">
+  <% @countdowns.each do |countdown| %>
+    <%= render countdown %>
+    <p>
+      <%= link_to "Show this countdown", countdown %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New countdown", new_countdown_path %>
