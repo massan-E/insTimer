@@ -1,24 +1,12 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+inspire : 鼓舞する<br>
+timer : タイマー<br>
+<br>
+inspimer<br>
+音が似てるでしょ？
+<br>
+目標までの日時を投稿すると詳細ページでカウントダウンが確認出来る。<br>
+詳細ページは誰でも確認出来て、コメントや備え付けのボタンで”鼓舞”できる。<br>
+期限が他の人にも見えるからネガティブインセンティブ効果がある＋応援もしてもらえるしその可視化もできる。<br>
+<br>
+モチベアップにはもってこいでは？
