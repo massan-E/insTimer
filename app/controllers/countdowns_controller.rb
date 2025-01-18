@@ -8,6 +8,8 @@ class CountdownsController < ApplicationController
 
   # GET /countdowns/1 or /countdowns/1.json
   def show
+    @comment = Comment.new
+    @comments = @countdown.comments
   end
 
   # GET /countdowns/new
