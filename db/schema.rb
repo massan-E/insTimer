@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_17_111941) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_18_095339) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.text "body"
+    t.bigint "countdown_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["countdown_id"], name: "index_comments_on_countdown_id"
+  end
 
   create_table "countdowns", force: :cascade do |t|
     t.string "name"
@@ -21,4 +30,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_17_111941) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "comments", "countdowns"
 end

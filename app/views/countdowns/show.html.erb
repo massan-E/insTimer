@@ -8,3 +8,7 @@
 
   <%= button_to "Destroy this countdown", @countdown, method: :delete %>
 </div>
+
+<%= render "comments/form", comment: @comment, countdown: @countdown %>
+
+<%= render @comments %>
