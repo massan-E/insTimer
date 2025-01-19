@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'countdowns#index'
-  resources :countdowns do 
+  resources :countdowns do
     resources :comments
+    member do
+      post 'cheer'  # 個別のカウントダウンに対するcheerアクション
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

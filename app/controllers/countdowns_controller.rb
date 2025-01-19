@@ -1,5 +1,5 @@
 class CountdownsController < ApplicationController
-  before_action :set_countdown, only: %i[ show edit update destroy ]
+  before_action :set_countdown, only: %i[ show edit update destroy cheer ]
 
   # GET /countdowns or /countdowns.json
   def index
@@ -57,6 +57,12 @@ class CountdownsController < ApplicationController
       format.html { redirect_to countdowns_path, status: :see_other, notice: "Countdown was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def cheer
+    @countdown.number_of_cheers += 1
+    @countdown.save
+    redirect_to @countdown
   end
 
   private
