@@ -3,7 +3,7 @@ class CountdownsController < ApplicationController
 
   # GET /countdowns or /countdowns.json
   def index
-    @countdowns = Countdown.all
+    @countdowns = Countdown.all.order(created_at: :desc)
   end
 
   # GET /countdowns/1 or /countdowns/1.json

@@ -21,6 +21,7 @@ class CommentsController < ApplicationController
   def create
     @countdown = Countdown.find(params[:countdown_id])
     @comment = @countdown.comments.build(comment_params)
+    @comments = @countdown.comments.order(created_at: :desc)
 
     respond_to do |format|
       if @comment.save
