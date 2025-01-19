@@ -27,5 +27,7 @@ module Myapp
 
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.browser_support_disabled = true
   end
 end
