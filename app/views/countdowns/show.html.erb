@@ -91,22 +91,24 @@
     <div class="flex items-center justify-center gap-4">
       <%= button_to cheer_countdown_path(@countdown), 
           class: "px-6 py-3 bg-[#de4848] hover:bg-[#c43d3d] text-white rounded-lg transition-colors duration-200 uppercase tracking-wide text-sm font-normal" do %>
-        <span class="font-normal">応援！</span>
+        <span class="font-normal">応援する！</span>
         <span class="font-bold"><%= @countdown.number_of_cheers %></span>
       <% end %>
     </div>
   </div>
 
   <div class="max-w-7xl mx-auto mt-12 px-4 space-y-8">
-    <div class="flex items-center justify-center gap-4">
-      <%= link_to "Edit this countdown", edit_countdown_path(@countdown), 
-          class: "px-6 py-3 bg-[#de4848] hover:bg-[#c43d3d] text-white rounded-lg transition-colors duration-200 uppercase tracking-wide text-sm font-normal" %>
-      <%= link_to "Back to countdowns", countdowns_path,
-          class: "px-6 py-3 bg-gray-200 hover:bg-gray-300 text-[#1a1a1a] rounded-lg transition-colors duration-200 uppercase tracking-wide text-sm font-normal" %>
-      <%= button_to "Destroy this countdown", @countdown, method: :delete,
-          class: "px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg transition-colors duration-200 uppercase tracking-wide text-sm font-normal",
-          form: { class: "inline-block" } %>
-    </div>
+    <% if current_user == @countdown.user %>
+      <div class="flex items-center justify-center gap-4">
+        <%= link_to "Edit this countdown", edit_countdown_path(@countdown), 
+            class: "px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg transition-colors duration-200 uppercase tracking-wide text-sm font-normal" %>
+        
+        <%= button_to "Destroy this countdown", @countdown, method: :delete,
+            class: "px-6 py-3 bg-[#de4848] hover:bg-[#c43d3d] text-white rounded-lg transition-colors duration-200 uppercase tracking-wide text-sm font-normal",
+            form: { class: "inline-block" } %>
+      </div>
+    <% end %>
+
 
     <div class="bg-white shadow-lg rounded-lg p-8 m-8">
       <h2 class="text-2xl text-[#1a1a1a] font-light uppercase tracking-wide mb-6">応援コメント</h2>
@@ -115,3 +117,5 @@
         <%= render @comments %>
       </div>
     </div>
+  </div>
+</div>

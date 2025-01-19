@@ -24,6 +24,7 @@ class CountdownsController < ApplicationController
   # POST /countdowns or /countdowns.json
   def create
     @countdown = Countdown.new(countdown_params)
+    @countdown.user = current_user if user_signed_in?
 
     respond_to do |format|
       if @countdown.save

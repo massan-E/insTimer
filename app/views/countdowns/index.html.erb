@@ -1,15 +1,20 @@
-<p style="color: green"><%= notice %></p>
-
-<% content_for :title, "Countdowns" %>
-
-<h1>Countdowns</h1>
-
-<div id="countdowns">
-  <% @countdowns.each do |countdown| %>
-    <%= render countdown %>
-    <p>
-      <%= link_to "Show this countdown", countdown %>
-    </p>
-    <br>
+<div class="min-h-screen bg-gray-100 pt-8 px-4 font-['Lato']">
+  <% if notice %>
+    <div class="max-w-7xl mx-auto mb-8">
+      <p class="bg-[#de4848]/10 text-[#de4848] px-4 py-2 rounded-lg"><%= notice %></p>
+    </div>
   <% end %>
+
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-4xl text-[#1a1a1a] font-light mb-8 text-center tracking-wide">
+      <strong class="font-normal text-[#de4848]">InsTimer</strong>
+    </h1>
+    <p class="text-gray-600 text-center mb-12">名前の由来は Inspire(鼓舞する) × Timer<br>目標までひた走る人を応援しよう！！ </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="countdowns">
+      <% @countdowns.each do |countdown| %>
+        <%= render countdown %>
+      <% end %>
+    </div>
+  </div>
 </div>
