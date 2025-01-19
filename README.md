@@ -2,7 +2,7 @@
 inspire : 鼓舞する<br>
 timer : タイマー<br>
 <br>
-inspimer<br>
+insTimer<br>
 音が似てるでしょ？
 <br>
 目標までの日時を投稿すると詳細ページでカウントダウンが確認出来る。<br>
