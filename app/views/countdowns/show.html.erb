@@ -1,6 +1,84 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @countdown %>
+<div id="<%= dom_id @countdown %>" class="countdown-wrapper">
+  <div class="wrap">
+    <div class="countdown-details">
+      <h1><%= @countdown.name %></h1>
+      <p><%= @countdown.description %></p>
+    </div>
+
+    <% seconds_until_target_time = @countdown.target.to_i - Time.now.to_i %>
+
+    <div class="countdown" data-controller="countdown" 
+        data-countdown-target="countdown" 
+        data-seconds-until-end-value="<%= seconds_until_target_time %>">
+      
+      <div class="bloc-time days">
+        <span class="count-title">Days</span>
+        <div class="figure days-1">
+          <span class="top">0</span>
+          <span class="top-back"><span>0</span></span>
+          <span class="bottom">0</span>
+          <span class="bottom-back"><span>0</span></span>
+        </div>
+        <div class="figure days-2">
+          <span class="top">0</span>
+          <span class="top-back"><span>0</span></span>
+          <span class="bottom">0</span>
+          <span class="bottom-back"><span>0</span></span>
+        </div>
+      </div>
+
+      <div class="bloc-time hours">
+        <span class="count-title">Hours</span>
+        <div class="figure hours-1">
+          <span class="top">0</span>
+          <span class="top-back"><span>0</span></span>
+          <span class="bottom">0</span>
+          <span class="bottom-back"><span>0</span></span>
+        </div>
+        <div class="figure hours-2">
+          <span class="top">0</span>
+          <span class="top-back"><span>0</span></span>
+          <span class="bottom">0</span>
+          <span class="bottom-back"><span>0</span></span>
+        </div>
+      </div>
+
+      <div class="bloc-time min">
+        <span class="count-title">Minutes</span>
+        <div class="figure min-1">
+          <span class="top">0</span>
+          <span class="top-back"><span>0</span></span>
+          <span class="bottom">0</span>
+          <span class="bottom-back"><span>0</span></span>
+        </div>
+        <div class="figure min-2">
+          <span class="top">0</span>
+          <span class="top-back"><span>0</span></span>
+          <span class="bottom">0</span>
+          <span class="bottom-back"><span>0</span></span>
+        </div>
+      </div>
+
+      <div class="bloc-time sec">
+        <span class="count-title">Seconds</span>
+        <div class="figure sec-1">
+          <span class="top">0</span>
+          <span class="top-back"><span>0</span></span>
+          <span class="bottom">0</span>
+          <span class="bottom-back"><span>0</span></span>
+        </div>
+        <div class="figure sec-2">
+          <span class="top">0</span>
+          <span class="top-back"><span>0</span></span>
+          <span class="bottom">0</span>
+          <span class="bottom-back"><span>0</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div>
   <%= link_to "Edit this countdown", edit_countdown_path(@countdown) %> |
@@ -12,3 +90,73 @@
 <%= render "comments/form", comment: @comment, countdown: @countdown %>
 
 <%= render @comments %>
+
+<div class="contentBox">
+  <div class="buttonBox red first">
+    <button>Hover One</button>
+    <div class="border"></div>
+    <div class="border"></div>
+  </div>
+
+  <div class="buttonBox second">
+    <button>Hover Two</button>
+    <div class="border"></div>
+    <div class="border"></div>
+  </div>
+
+  <div class="buttonBox third">
+    <button>Hover Three</button>
+    <div class="border"></div>
+    <div class="border"></div>
+    <div class="border"></div>
+    <div class="border"></div>
+  </div>
+
+  <div class="buttonBox fourth">
+    <button>Hover Four</button>
+    <div class="border"></div>
+    <div class="border"></div>
+    <div class="border"></div>
+    <div class="border"></div>
+  </div>
+
+  <div class="buttonBox fifth">
+    <button>Hover Five</button>
+  </div>
+<!-- </div>
+
+<div class="contentBox"> -->
+  <div class="buttonBox sixth red">
+    <button>Hover Six</button>
+    <div class="border"></div>
+    <div class="border"></div>
+    <div class="border"></div>
+    <div class="border"></div>
+  </div>
+
+  <div class="buttonBox seventh">
+    <button>Hover Seven</button>
+  </div>
+
+  <div class="buttonBox eighth">
+    <button>Hover Eight</button>
+  </div>
+
+  <div class="buttonBox ninth red">
+    <button>Hover Nine</button>
+  </div>
+
+  <div class="buttonBox tenth">
+    <button>
+      <span>H</span>
+      <span>o</span>
+      <span>v</span>
+      <span>e</span>
+      <span>r</span>
+      <span> </span>
+      <span>T</span>
+      <span>e</span>
+      <span>n</span>
+    </button>
+  </div>
+</div>
